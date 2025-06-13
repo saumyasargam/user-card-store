@@ -117,7 +117,7 @@ function App() {
           <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
 
           <div className="fixed inset-0 flex items-center justify-center p-4">
-            <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-gray-800 p-6 text-left align-middle shadow-xl transition-all">
+            <Dialog.Panel className="w-full max-w-md transform overflow-y-auto rounded-2xl bg-gray-800 p-6 text-left align-middle shadow-xl transition-all max-h-[90vh]">
               <Dialog.Title className="text-lg font-medium leading-6 text-white mb-4">
                 Edit Card
               </Dialog.Title>
