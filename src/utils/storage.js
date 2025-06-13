@@ -1,4 +1,4 @@
-const SERVER_URL = 'https://glassmorphism-card-zeta.vercel.app/:3001';
+const SERVER_URL = 'https://user-card-store.onrender.com:3000';
 
 async function saveCards(cards) {
   try {
