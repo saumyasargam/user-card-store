@@ -108,7 +108,7 @@ function UserForm({ initialData, onSubmit, isEditing }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form onSubmit={handleSubmit} className="space-y-6 text-text-dark dark:text-text-light">
       <div className="flex flex-col items-center mb-6">
         <div
           className="relative w-32 h-32 mb-4"
@@ -119,7 +119,7 @@ function UserForm({ initialData, onSubmit, isEditing }) {
         >
           <div
             className={`w-full h-full rounded-full overflow-hidden border-4 ${
-              isDragging ? 'border-blue-500 border-dashed' : 'border-white/20'
+              isDragging ? 'border-primary border-dashed' : 'border-primary/20'
             } transition-colors`}
           >
             {imagePreview ? (
@@ -129,12 +129,12 @@ function UserForm({ initialData, onSubmit, isEditing }) {
                 className="w-full h-full object-cover"
               />
             ) : (
-              <div className="w-full h-full bg-gray-700 flex flex-col items-center justify-center gap-2">
+              <div className="w-full h-full bg-background-dark dark:bg-background-light flex flex-col items-center justify-center gap-2">
                 <FontAwesomeIcon
                   icon={isDragging ? faUpload : faImage}
-                  className={`text-3xl ${isDragging ? 'text-blue-400' : 'text-gray-400'}`}
+                  className={`text-3xl ${isDragging ? 'text-primary' : 'text-primary/60'}`}
                 />
-                <span className="text-xs text-gray-400 text-center px-2">
+                <span className="text-xs text-primary/80 text-center px-2">
                   {isDragging ? 'Drop image here' : 'Click, drag, or paste image'}
                 </span>
               </div>
@@ -151,7 +151,7 @@ function UserForm({ initialData, onSubmit, isEditing }) {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
-          <label className="block text-sm font-medium text-gray-300 mb-2">
+          <label className="block text-sm font-medium mb-2">
             Full Name
           </label>
           <input
@@ -160,7 +160,7 @@ function UserForm({ initialData, onSubmit, isEditing }) {
             value={formData.fullName}
             onChange={handleInputChange}
             required
-            className="w-full px-4 py-2 bg-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white placeholder-gray-400"
+            className="w-full px-4 py-2 bg-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary border border-primary/20 text-text-dark dark:text-text-light placeholder-primary/50"
             placeholder="John Doe"
           />
         </div>

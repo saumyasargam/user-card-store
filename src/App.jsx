@@ -1,10 +1,34 @@
 import { useState, useEffect } from 'react';
 import { Dialog } from '@headlessui/react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 import UserForm from './components/UserForm';
 import CardGrid from './components/CardGrid';
 import { getCards, addCard, updateCard, deleteCard } from './utils/storage';
+import { ThemeProvider, useTheme } from './utils/ThemeContext';
+
+function ThemeButton() {
+  const { isDark, toggleTheme } = useTheme();
+  return (
+    <button
+      onClick={toggleTheme}
+      className="fixed top-4 right-4 p-2 rounded-full bg-primary hover:bg-primary-dark transition-colors"
+      aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+    >
+      <FontAwesomeIcon icon={isDark ? faSun : faMoon} className="text-background-light w-6 h-6" />
+    </button>
+  );
+}
 
 function App() {
+  return (
+    <ThemeProvider>
+      <AppContent />
+    </ThemeProvider>
+  );
+}
+
+function AppContent() {
   const [cards, setCards] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
   const [editingCard, setEditingCard] = useState(null);
@@ -81,14 +105,15 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white p-8">
+    <div className="min-h-screen bg-background-dark dark:bg-background-light text-text-dark dark:text-text-light p-8 transition-colors">
+      <ThemeButton />
       <div className="max-w-7xl mx-auto">
         <h1 className="text-4xl font-bold mb-8 text-center">
           Class Card System
         </h1>
 
         {error && (
-          <div className="bg-red-500 text-white p-4 rounded-lg mb-6">
+          <div className="bg-red-500 text-white dark:text-background-light p-4 rounded-lg mb-6">
             {error}
           </div>
         )}
@@ -99,7 +124,7 @@ function App() {
 
         {loading ? (
           <div className="text-center py-8">
-            <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500 mx-auto"></div>
+            <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary mx-auto"></div>
           </div>
         ) : (
           <CardGrid
@@ -117,7 +142,7 @@ function App() {
           <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
 
           <div className="fixed inset-0 flex items-center justify-center p-4">
-            <Dialog.Panel className="w-full max-w-md transform overflow-y-auto rounded-2xl bg-gray-800 p-6 text-left align-middle shadow-xl transition-all max-h-[90vh]">
+            <Dialog.Panel className="w-full max-w-md transform overflow-y-auto rounded-2xl bg-background-dark dark:bg-background-light p-6 text-left align-middle shadow-xl transition-all max-h-[90vh]">
               <Dialog.Title className="text-lg font-medium leading-6 text-white mb-4">
                 Edit Card
               </Dialog.Title>

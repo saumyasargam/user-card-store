@@ -27,18 +27,18 @@ function UserCard({ card, onEdit, onDelete }) {
   } = card;
 
   return (
-    <div className="relative height-[300px] width-[200px] group bg-white/10 backdrop-blur-md rounded-xl p-6 shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-105 hover:bg-white/20">
-      <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+    <div className="bg-background-dark dark:bg-background-light rounded-lg p-6 shadow-lg relative group border border-primary/20 hover:border-primary/50 transition-colors">
+      <div className="absolute top-4 right-4 space-x-2 opacity-0 group-hover:opacity-100 transition-opacity z-10">
         <button
           onClick={() => onEdit(card)}
-          className="p-2 text-blue-400 hover:text-blue-300 transition-colors"
+          className="text-primary hover:text-primary-dark transition-colors cursor-pointer"
           title="Edit"
         >
           <FontAwesomeIcon icon={faPen} />
         </button>
         <button
           onClick={() => onDelete(card.id)}
-          className="p-2 text-red-400 hover:text-red-300 transition-colors"
+          className="text-primary hover:text-red-500 transition-colors cursor-pointer"
           title="Delete"
         >
           <FontAwesomeIcon icon={faTrash} />
@@ -57,15 +57,15 @@ function UserCard({ card, onEdit, onDelete }) {
             <FontAwesomeIcon icon="user" className="text-4xl text-gray-400" />
           </div>
         )}
-        <h3 className="text-xl font-semibold text-white mb-1">{fullName}</h3>
-        <p className="text-blue-300">{position}</p>
+        <h2 className="text-xl font-semibold mb-2 text-text-dark dark:text-text-light">{fullName}</h2>
+        <p className="text-primary dark:text-primary-light mb-4">{position}</p>
       </div>
 
       <div className="space-x-6 flex justify-center">
         {email && (
           <a
             href={`mailto:${email}`}
-            className="flex items-center gap-3 text-gray-300 hover:text-blue-300 transition-colors"
+            className="text-primary hover:text-primary-dark transition-colors"
           >
             <FontAwesomeIcon icon={faEnvelope} />
             {/* <span>{email}</span> */}
