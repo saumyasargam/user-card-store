@@ -1,30 +1,14 @@
 import { useState, useEffect } from 'react';
 import { Dialog } from '@headlessui/react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 import UserForm from './components/UserForm';
 import CardGrid from './components/CardGrid';
 import { getCards, addCard, updateCard, deleteCard } from './utils/storage';
-import { ThemeProvider, useTheme } from './utils/ThemeContext';
 
-function ThemeButton() {
-  const { isDark, toggleTheme } = useTheme();
-  return (
-    <button
-      onClick={toggleTheme}
-      className="fixed top-4 right-4 p-2 rounded-full bg-primary hover:bg-primary-dark transition-colors"
-      aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
-    >
-      <FontAwesomeIcon icon={isDark ? faSun : faMoon} className="text-background-light w-6 h-6" />
-    </button>
-  );
-}
+
 
 function App() {
   return (
-    <ThemeProvider>
-      <AppContent />
-    </ThemeProvider>
+    <AppContent />
   );
 }
 
