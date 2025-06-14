@@ -50,11 +50,11 @@ function UserCard({ card, onEdit, onDelete }) {
           <img
             src={getImageUrl(image)}
             alt={fullName}
-            className="w-32 h-32 rounded-full object-cover mb-4 border-4 border-white/20"
+            className="w-32 h-32 rounded-full object-cover mb-4 border-2 border-primary/50 "
           />
         ) : (
-          <div className="w-32 h-32 rounded-full mb-4 border-4 border-white/20 bg-gray-700 flex items-center justify-center">
-            <FontAwesomeIcon icon="user" className="text-4xl text-gray-400" />
+          <div className="w-32 h-32 rounded-full mb-4 border-2 border-primary/50 bg-gray-700 flex items-center justify-center">
+            <FontAwesomeIcon icon="user" className="text-4xl text-gray-400 " />
           </div>
         )}
         <h2 className="text-xl font-semibold mb-2 text-text-dark dark:text-text-light">{fullName}</h2>
@@ -65,7 +65,7 @@ function UserCard({ card, onEdit, onDelete }) {
         {email && (
           <a
             href={`mailto:${email}`}
-            className="text-primary hover:text-primary-dark transition-colors"
+            className="text-gray-300 hover:text-primary-dark transition-colors"
           >
             <FontAwesomeIcon icon={faEnvelope} />
             {/* <span>{email}</span> */}
@@ -75,7 +75,7 @@ function UserCard({ card, onEdit, onDelete }) {
         {phone && (
           <a
             href={`tel:${phone}`}
-            className="flex items-center gap-3 text-gray-300 hover:text-blue-300 transition-colors"
+            className="flex items-center gap-3 text-gray-300 hover:text-primary-dark transition-colors"
           >
             <FontAwesomeIcon icon={faPhone} />
             {/* <span>{phone}</span> */}
@@ -87,7 +87,7 @@ function UserCard({ card, onEdit, onDelete }) {
             href={linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-3 text-gray-300 hover:text-blue-300 transition-colors"
+            className="flex items-center gap-3 text-gray-300 hover:text-primary-dark transition-colors"
           >
             <FontAwesomeIcon icon={faLinkedin} />
             {/* <span>LinkedIn</span> */}
@@ -99,7 +99,7 @@ function UserCard({ card, onEdit, onDelete }) {
             href={instagram}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-3 text-gray-300 hover:text-blue-300 transition-colors"
+            className="flex items-center gap-3 text-gray-300 hover:text-primary-dark transition-colors"
           >
             <FontAwesomeIcon icon={faInstagram} />
             {/* <span>Instagram</span> */}

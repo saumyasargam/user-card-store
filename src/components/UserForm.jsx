@@ -144,7 +144,7 @@ function UserForm({ initialData, onSubmit, isEditing }) {
             type="file"
             accept="image/*"
             onChange={handleImageChange}
-            className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+            className="absolute inset-0 w-full h-full opacity-0 cursor-pointer "
           />
         </div>
       </div>
@@ -161,12 +161,12 @@ function UserForm({ initialData, onSubmit, isEditing }) {
             onChange={handleInputChange}
             required
             className="w-full px-4 py-2 bg-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary border border-primary/20 text-text-dark dark:text-text-light placeholder-primary/50"
-            placeholder="John Doe"
+            placeholder="Enter your name"
           />
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-300 mb-2">
+          <label className="block text-sm font-medium mb-2">
             Position
           </label>
           <input
@@ -176,12 +176,12 @@ function UserForm({ initialData, onSubmit, isEditing }) {
             onChange={handleInputChange}
             required
             className="w-full px-4 py-2 bg-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white placeholder-gray-400"
-            placeholder="Software Engineer"
+            placeholder="Enter your position"
           />
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-300 mb-2">
+          <label className="block text-sm font-medium mb-2">
             Email
           </label>
           <input
@@ -191,12 +191,12 @@ function UserForm({ initialData, onSubmit, isEditing }) {
             onChange={handleInputChange}
             required
             className="w-full px-4 py-2 bg-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white placeholder-gray-400"
-            placeholder="john@example.com"
+            placeholder="Enter your email"
           />
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-300 mb-2">
+          <label className="block text-sm font-medium mb-2">
             Phone
           </label>
           <input
@@ -205,12 +205,12 @@ function UserForm({ initialData, onSubmit, isEditing }) {
             value={formData.phone}
             onChange={handleInputChange}
             className="w-full px-4 py-2 bg-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white placeholder-gray-400"
-            placeholder="+1 234 567 8900"
+            placeholder="Enter your phone number"
           />
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-300 mb-2">
+          <label className="block text-sm font-medium mb-2">
             LinkedIn URL
           </label>
           <input
@@ -219,12 +219,12 @@ function UserForm({ initialData, onSubmit, isEditing }) {
             value={formData.linkedin}
             onChange={handleInputChange}
             className="w-full px-4 py-2 bg-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white placeholder-gray-400"
-            placeholder="https://linkedin.com/in/johndoe"
+            placeholder="Enter your LinkedIn URL"
           />
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-300 mb-2">
+          <label className="block text-sm font-medium mb-2">
             Instagram URL
           </label>
           <input
@@ -233,7 +233,7 @@ function UserForm({ initialData, onSubmit, isEditing }) {
             value={formData.instagram}
             onChange={handleInputChange}
             className="w-full px-4 py-2 bg-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white placeholder-gray-400"
-            placeholder="https://instagram.com/johndoe"
+            placeholder="Enter your Instagram URL"
           />
         </div>
       </div>

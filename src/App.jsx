@@ -106,7 +106,7 @@ function AppContent() {
 
   return (
     <div className="min-h-screen bg-background-dark dark:bg-background-light text-text-dark dark:text-text-light p-8 transition-colors">
-      <ThemeButton />
+      {/* <ThemeButton /> */}
       <div className="max-w-7xl mx-auto">
         <h1 className="text-4xl font-bold mb-8 text-center">
           Class Card System
